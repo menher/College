@@ -1,0 +1,13 @@
+Past Ocean Levels:
+
+Declare the 1.8 millimeter as the average for the past 100 years
+Calculate the total amount of millimeters that has rose during the past 100 years
+Calculate how many centimeters it takes to get the total amount of millimeters that has risen in the past 100 years
+Calculate how many inches it takes to get how many centimeters it had taken to get the total amount of millimeters that has risen in the past 100 years
+Display the calculation results for centimeters and inches in the terminal
+
+Future Ocean Level:
+
+Declare the 3.3 millimeters as the average per year
+Calculate the total millimeters if the average stays the same over the next 15 years
+Display the total of the calculation to the terminal
