@@ -1,14 +1,15 @@
-
-
 /*
-  No ai was used in the making of this program, the only thing that was used is in class lectures, and the online documentation of c++ (Cplusplus.com)
+  No ai was used in the making of this program, the only thing that was used is
+  the class lecture resources, and the online website: cplusplus.com
 */
+
 #include <cmath>
 #include <iostream>
 
 int main() {
   int choice;
   bool running = true;
+  bool validChecker = false;
 
   while (running) {
     std::cout << "Geometry Calculator" << std::endl;
@@ -39,14 +40,14 @@ int main() {
         }
       } while (userCircleRadius <= 0);
 
-      areaCalculation = pi * std::pow(userCircleRadius, 2); // Calculates the area of a circle
+      areaCalculation =
+          pi * std::pow(userCircleRadius, 2); // Calculates the area of a circle
 
-      std::cout << "The area is: ";
+      std::cout << "The area of a Circle is: ";
       std::cout << areaCalculation;
       std::cout << " " << std::endl;
-    }
-
-    if (choice == 2) {
+    } 
+    else if (choice == 2) {
       double areaCalculation;
       double width;
       double height;
@@ -73,51 +74,56 @@ int main() {
 
       areaCalculation = height * width; // Calculates the area of a rectangle
 
-      std::cout << "The area is: " << areaCalculation << std::endl;
-    }
-
-    if (choice == 3) {
-      double length;
-      double width;
+      std::cout << "The area of a Rectangle is: " << areaCalculation << std::endl;
+    } 
+    else if (choice == 3) {
+      double height;
+      double base;
       double areaCalculation;
 
       do {
-        std::cout << "Enter the length of the Triangle: ";
-        std::cin >> length;
+        std::cout << "Enter the height of the Triangle: ";
+        std::cin >> height;
         std::cout << " " << std::endl;
 
-        if (length <= 0) {
+        if (height <= 0) {
           std::cout << "Please enter a number higher than zero" << std::endl;
         }
-      } while (length <= 0);
+      } while (height <= 0);
 
       do {
-        std::cout << "Enter the width of the Triangle: ";
-        std::cin >> width;
+        std::cout << "Enter the base of the Triangle: ";
+        std::cin >> base;
         std::cout << " " << std::endl;
 
-        if (width <= 0) {
+        if (base <= 0) {
           std::cout << "Please enter a number higher than zero" << std::endl;
         }
-      } while (width <= 0);
+      } while (base <= 0);
 
-      areaCalculation = 0.5 * length * width; // Calculates the area of a triangle
+      areaCalculation =
+          0.5 * height * base; // Calculates the area of a triangle
 
-      std::cout << "The area is: ";
+      std::cout << "The area of a Triangle is: ";
       std::cout << areaCalculation;
       std::cout << " " << std::endl;
     }
 
-    if (choice <= 0) {
-      std::cout << "Please enter a valid number (1-4)" << std::endl;
+    // The nested if makes it so that the only the numbers between 1-4 are able to be picked
+    if (choice >= 1) {
+      if (choice <= 4) {
+        validChecker = true;
+      }
     }
 
-    if (choice > 4) {
+    // If the valid checker is true based on the nested if, it will print the message and loop back to the beginning
+    if (!validChecker) {
       std::cout << "Please enter a valid number (1-4)" << std::endl;
     }
 
     if (choice == 4) {
-      return 0;
+      running = false;
     }
   }
+  return 0;
 }
