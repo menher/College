@@ -1,5 +1,7 @@
+#include <cctype>
 #include <cmath>
 #include <iostream>
+#include <string>
 
 int main() {
   const std::string burger = "Joe's Gourmet Burgers";
@@ -20,16 +22,31 @@ int main() {
 
   std::cout << "Is anyone in your party a vegetarian (y/n)? ";
   std::cin >> vegetarian;
-  std::cout << " " << std::endl;
+  if (!isalpha(vegetarian)) {
+    std::cout << "Anwser must be y or n, please try again." << std::endl;
+    return 1;
+  }
+  std::cout << std::endl;
 
   std::cout << "Is anyone in your party a vegan (y/n)? ";
   std::cin >> vegan;
-  std::cout << " " << std::endl;
+  if (!isalpha(vegan)) {
+    std::cout << "Anwser must be y or n, please try again." << std::endl;
+    return 1;
+  }
+  std::cout << std::endl;
 
   std::cout << "Is anyone in your party gluten-free (y/n)? ";
   std::cin >> glutenFree;
-  std::cout << " " << std::endl;
+  if (!isalpha(glutenFree)) {
+    std::cout << "Anwser must be y or n, please try again." << std::endl;
+    return 1;
+  }
+  std::cout << std::endl;
 
+  // If the users picks yes for any of the questions then it makes the numbers
+  // associated with the options to add up which displays the restaurants based
+  // on the cases
   if (vegetarian == 'y' || vegetarian == 'Y') {
     options = VEGETARIAN;
   }
